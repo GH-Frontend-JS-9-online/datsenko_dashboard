@@ -1,0 +1,28 @@
+.aside {
+  box-shadow: 0 3px 80px rgba(23, 24, 32, 0.2);
+  background-color: #2f3242;
+  height: auto;
+  padding: 20px;
+}
+
+.aside__nav__menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.aside__nav__menu__item:not(:first-child) {
+  margin-top: 50px;
+}
+
+.aside__nav__menu__item > .aside__nav__menu__link {
+  color: #757da4;
+  font-size: 31px;
+  line-height: 31px;
+  transition: color .3s ease;
+}
+
+.aside__nav__menu__item > .aside__nav__menu__link:hover {
+  color: #ffffff;
+}
