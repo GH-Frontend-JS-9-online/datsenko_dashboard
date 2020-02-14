@@ -31,6 +31,12 @@ const AddProject:React.FC<IAddProject> = props => {
         setDeadline(event.target.value)
     }
 
+    dashboardApiServices
+        .getCurrentUser()
+        .then(response => response.json())
+        .then(response => localStorage.setItem('user',  JSON.stringify(response)))
+        .catch(err => console.error(err))
+
     const newProject: IProject = {
         title: title,
         company: company,
