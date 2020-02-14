@@ -17,7 +17,6 @@ const AddProject:React.FC<IAddProject> = props => {
     const [company, setCompany] = useState<string>('')
     const [cost, setCost] = useState<string>('')
     const [deadline, setDeadline] = useState<string>('')
-    const [assigned, setAssigned] = useState<string>('')
 
     const titleHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         setTitle(event.target.value)
@@ -31,16 +30,13 @@ const AddProject:React.FC<IAddProject> = props => {
     const deadlineHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         setDeadline(event.target.value)
     }
-    const assignedHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setAssigned(event.target.value)
-    }
 
     const newProject: IProject = {
         title: title,
         company: company,
         cost: `$${cost}`,
         deadline: deadline,
-        assigned: assigned
+        assigned: JSON.parse(localStorage.getItem('user') as string)._id
     }
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
@@ -58,7 +54,6 @@ const AddProject:React.FC<IAddProject> = props => {
         setCompany('')
         setCost('')
         setDeadline('')
-        setAssigned('')
         updateProjects()
     }
 
@@ -71,7 +66,6 @@ const AddProject:React.FC<IAddProject> = props => {
                 <input type="text" onChange={companyHandler} value={company} placeholder="Company..." required />
                 <input type="number" onChange={costHandler}  value={cost} placeholder="Cost..." min="0" required />
                 <input type="tex" onChange={deadlineHandler} value={deadline} placeholder="Deadline..." required />
-                <input type="text" onChange={assignedHandler} value={assigned} placeholder="Assigned..." required />
                 <button type="submit">Add new Project</button>
             </form>
         </div>
