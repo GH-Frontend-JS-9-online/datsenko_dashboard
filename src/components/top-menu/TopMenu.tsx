@@ -14,6 +14,10 @@ const TopMenu:React.FC<ITopMenu> = props => {
         }
     }
 
+    const closeAddProject = ():void => {
+        setShowProject(prev => !prev)
+    }
+
     return (
         <>
             <ul className="top-nav__menu">
@@ -27,7 +31,7 @@ const TopMenu:React.FC<ITopMenu> = props => {
                     )
                 })}
             </ul>
-            <AddProject addProjectDisplay={(isShowProject) ? 'flex' : 'none'}/>
+            <AddProject close={closeAddProject} addProjectDisplay={(isShowProject) ? 'flex' : 'none'}/>
         </>
     )
 }
