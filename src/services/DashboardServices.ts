@@ -39,6 +39,16 @@ class DashboardApiServices {
         })
     }
 
+    getCurrentUser() {
+        let token: string = localStorage.getItem('token') as any
+        return fetch(`${this.apiBase}/users/`, {
+            method: 'GET',
+            headers: {
+                'x-access-token': token
+            }
+        })
+    }
+
     getAllProjects() {
         let token: string = localStorage.getItem('token') as any
         return fetch(`${this.apiBase}/projects/`, {
