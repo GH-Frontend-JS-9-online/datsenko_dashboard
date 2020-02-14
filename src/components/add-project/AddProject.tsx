@@ -6,6 +6,7 @@ import {ProjectContext} from '../../services/ProjectContext'
 
 interface IAddProject {
     addProjectDisplay: string
+    close(): void
 }
 
 const AddProject:React.FC<IAddProject> = props => {
@@ -17,11 +18,6 @@ const AddProject:React.FC<IAddProject> = props => {
     const [cost, setCost] = useState<string>('')
     const [deadline, setDeadline] = useState<string>('')
     const [assigned, setAssigned] = useState<string>('')
-
-    const addProject: any = React.createRef()
-    const close = ():void => {
-        addProject.current.style.display = 'none'
-    }
 
     const titleHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         setTitle(event.target.value)
@@ -67,8 +63,8 @@ const AddProject:React.FC<IAddProject> = props => {
     }
 
     return (
-        <div ref={addProject} className="add-project" style={{display: props.addProjectDisplay}}>
-            <div className="close" onClick={close}></div>
+        <div className="add-project" style={{display: props.addProjectDisplay}}>
+            <div className="close" onClick={props.close}></div>
             <h1>Create new project</h1>
             <form action="#" onSubmit={handleSubmit} className="add-project__form">
                 <input type="text" onChange={titleHandler} value={title} placeholder="Title..." required />
