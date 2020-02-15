@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import './Authorization.scss'
 import {IUser} from '../../interfaces/IUser'
 import dashboardApiServices from '../../services/DashboardServices'
+import {NavLink} from 'react-router-dom'
 
 
 const SignUp:React.FC = () => {
@@ -48,7 +49,7 @@ const SignUp:React.FC = () => {
             <div className="form-container sign-in-container">
                 <form name="registerForm" onSubmit={handlerSubmit} className="form">
                     <h1>Sign up</h1>
-                    <a href="#">Existing member?</a>
+                    <NavLink to="/login">Existing member?</NavLink>
                     <input
                         onChange={emailHandler}
                         value={email}

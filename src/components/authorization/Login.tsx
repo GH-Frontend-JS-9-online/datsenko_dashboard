@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import './Authorization.scss'
 import {IUser} from '../../interfaces/IUser'
 import dashboardApiServices from '../../services/DashboardServices'
+import {NavLink} from 'react-router-dom'
 
 
 const Login:React.FC = () => {
@@ -41,7 +42,7 @@ const Login:React.FC = () => {
             <div className="form-container sign-in-container">
                 <form name="loginForm" onSubmit={handlerSubmit} className="form">
                     <h1>Log in</h1>
-                    <a href="#">Not a member?</a>
+                    <NavLink to="/signup">Not a member?</NavLink>
                     <input
                         onChange={emailHandler}
                         value={email}
@@ -62,7 +63,7 @@ const Login:React.FC = () => {
                     <button className="btn btn-login" type="submit">
                         Log in
                     </button>
-                    <a href="#">Forgot password?</a>
+                    <NavLink to="/forgot">Forgot password?</NavLink>
                 </form>
             </div>
         </div>
