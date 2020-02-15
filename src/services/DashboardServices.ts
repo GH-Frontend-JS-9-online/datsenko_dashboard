@@ -49,6 +49,17 @@ class DashboardApiServices {
         })
     }
 
+    allThreadMessages() {
+        let token: string = localStorage.getItem('token') as any
+        let id: string = JSON.parse(localStorage.getItem('user') as string)._id
+        return fetch(`${this.apiBase}/threads/messages/${id}`, {
+            method: 'GET',
+            headers: {
+                'x-access-token': token
+            }
+        })
+    }
+
     getAllProjects() {
         let token: string = localStorage.getItem('token') as any
         return fetch(`${this.apiBase}/projects/`, {
