@@ -17,7 +17,7 @@ const App = () => {
                     <Route  component={ProjectsPage} path="/projects"/>
                     <Route  component={RaportPage} path="/raport"/>
                     <Route  component={InboxPage} path="/inbox"/>
-                    <Route  component={AuthorizationPage} path="/login"/>
+                    <Route  component={AuthorizationPage} path="/authorization"/>
                 </Switch>
             </div>
         </BrowserRouter>

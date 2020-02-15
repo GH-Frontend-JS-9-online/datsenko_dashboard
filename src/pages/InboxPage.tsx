@@ -4,6 +4,9 @@ import {asideMenuIcons} from '../services/ProjectContext'
 import Aside from '../components/aside/Aside'
 import InboxMenu from '../components/inbox-menu/InboxMenu'
 import dashboardApiServices from '../services/DashboardServices'
+import Inbox from "../components/inbox/Inbox";
+import Coversation from "../components/coversation/Coversation";
+import About from "../components/about/About";
 
 
 const InboxPage:React.FC = () => {
@@ -21,6 +24,11 @@ const InboxPage:React.FC = () => {
                 <Aside asideMenuIcons={asideMenuIcons}/>
                 <div className="middle">
                     <InboxMenu messagesItems={JSON.parse(localStorage.getItem('allThreadMessages') as string)}/>
+                    <div className="message">
+                        <Inbox/>
+                        <Coversation/>
+                        <About aboutItems={[JSON.parse(localStorage.getItem('user') as any)]}/>
+                    </div>
                 </div>
 
             </main>
