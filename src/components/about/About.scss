@@ -21,7 +21,6 @@ h2, h3, h4, h5, p, span {
 .user-data h2 {
   font-size: 22px;
   font-weight: 700;
-  /*line-height: 92px;*/
   letter-spacing: 0.44px;
   margin-top: 39px;
   margin-bottom: 8px;
@@ -31,7 +30,6 @@ h2, h3, h4, h5, p, span {
   color: #9ca1b2;
   font-size: 16px;
   font-weight: 400;
-  /*line-height: 92px;*/
   letter-spacing: 0.32px;
 }
 
@@ -39,7 +37,6 @@ h2, h3, h4, h5, p, span {
   color: #9ca1b2;
   font-size: 14px;
   font-weight: 400;
-  /*line-height: 28px;*/
   letter-spacing: 0.42px;
   margin-top: 27px;
   margin-bottom: 55px;
@@ -86,6 +83,6 @@ h2, h3, h4, h5, p, span {
     position: absolute;
     top: 0;
     right: 0;
-    transform: translate(-12px, 12px);
+    transform: translate(-6px, 15px);
   }
 }
