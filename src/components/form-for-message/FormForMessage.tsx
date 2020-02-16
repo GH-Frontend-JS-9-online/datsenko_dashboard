@@ -26,7 +26,7 @@ const FormForMessage: React.FC = () => {
     return (
         <form action="#" onSubmit={handleSubmit} className="write-message">
             <input type="text" onChange={messageHandler} value={message} name="write-message__text"
-                   placeholder="Write a message" required pattern=".*\S.*"/>
+                   placeholder="Write a message" required pattern=".*\S.*" autoComplete="off"/>
             <button type="submit" className="write-message__btn">
                 <i className="fas fa-paperclip"></i>
             </button>
