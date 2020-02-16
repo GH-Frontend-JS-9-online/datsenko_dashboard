@@ -7,7 +7,7 @@ interface IAside {
 }
 
 const Aside: React.FC<IAside> = props => {
-    const links: Array<string> = ['/', '/projects', '/raport', '/inbox', '/login']
+    const links: Array<string> = ['/', '/projects', '/raport', '/inbox', '/authorization']
     return (
         <aside className="aside">
             <nav className="aside__nav">
