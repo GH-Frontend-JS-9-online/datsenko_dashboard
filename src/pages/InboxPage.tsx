@@ -4,9 +4,9 @@ import {asideMenuIcons} from '../services/ProjectContext'
 import Aside from '../components/aside/Aside'
 import InboxMenu from '../components/inbox-menu/InboxMenu'
 import dashboardApiServices from '../services/DashboardServices'
-import Inbox from "../components/inbox/Inbox";
-import Coversation from "../components/coversation/Coversation";
-import About from "../components/about/About";
+import Inbox from '../components/inbox/Inbox'
+import Coversation from '../components/coversation/Coversation'
+import About from '../components/about/About'
 import {MessageContext} from '../services/MessageContext'
 
 const InboxPage:React.FC = () => {
@@ -16,7 +16,6 @@ const InboxPage:React.FC = () => {
         .then(response => response.json())
         .then(response =>  localStorage.setItem('allThreadMessages', JSON.stringify(response)))
         .catch(err => console.error(err))
-    console.log(messages)
     return (
         <div>
             <AppHeader/>
@@ -31,9 +30,7 @@ const InboxPage:React.FC = () => {
                             <About aboutItems={[JSON.parse(localStorage.getItem('user') as any)]}/>
                         </div>
                     </MessageContext.Provider>
-
                 </div>
-
             </main>
         </div>
     )
