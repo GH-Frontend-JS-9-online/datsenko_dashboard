@@ -6,4 +6,4 @@
    4. add header, sidebar
    5. add login, signUp, forgot 
 2. Advanced
-   1. add react-router 
+   1. add react-router, redux 
