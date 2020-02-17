@@ -1,6 +1,6 @@
 import React, {useContext, useState} from 'react'
 import './FormForMessage.scss'
-import dashboardApiServices from "../../services/DashboardServices";
+import dashboardApiServices from '../../services/DashboardServices'
 import {MessageContext} from '../../services/MessageContext'
 
 const FormForMessage: React.FC = () => {
