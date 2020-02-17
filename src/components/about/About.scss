@@ -8,8 +8,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  min-height: 500px;
-  font-family: Montserrat;
+  min-height: 100vh;
   flex-basis: 15%;
 }
 
@@ -38,7 +37,7 @@ h2, h3, h4, h5, p, span {
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.42px;
-  margin-top: 27px;
+  margin-top: 8px;
   margin-bottom: 55px;
 }
 
@@ -69,9 +68,9 @@ h2, h3, h4, h5, p, span {
 
 .user-photo {
   position: relative;
+  z-index: 1;
   font-size: 124px;
   color: #24203d;
-  position: relative;
   &::after {
     content: '';
     width: 24px;
