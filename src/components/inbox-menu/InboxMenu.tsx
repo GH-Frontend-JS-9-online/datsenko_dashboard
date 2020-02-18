@@ -1,8 +1,10 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import './InboxMenu.scss'
 import {IMessagesItem} from '../../interfaces/IMessagesItem'
+import {useSelector} from 'react-redux'
 
 const InboxMenu:React.FC<IMessagesItem> = props => {
+    const allThreadMessages = useSelector((state: any) => state.allThreadMessages)
     return (
         <nav className="inbox-nav">
             <ul className="inbox-nav__menu">
@@ -10,7 +12,7 @@ const InboxMenu:React.FC<IMessagesItem> = props => {
                     <li className="inbox-nav__left-menu__item">
                         <a href="#" className="inbox-nav__left-menu__link">
                             <i className="fas fa-inbox"></i>
-                            {`Inbox (${props.messagesItems.length})`}
+                            {`Inbox (${allThreadMessages.length})`}
                         </a>
                     </li>
                     <li className="inbox-nav__left-menu__item">
