@@ -1,6 +1,6 @@
 import React from 'react'
-import AppHeader from "../components/app-header/AppHeader";
-import Aside from "../components/aside/Aside";
+import AppHeader from '../components/app-header/AppHeader'
+import Aside from '../components/aside/Aside'
 import {asideMenuIcons} from '../services/ProjectContext'
 
 const RaportPage:React.FC = () => {
