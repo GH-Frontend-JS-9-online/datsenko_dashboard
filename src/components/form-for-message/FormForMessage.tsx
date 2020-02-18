@@ -1,22 +1,23 @@
-import React, {useContext, useState} from 'react'
+import React, {useState} from 'react'
 import './FormForMessage.scss'
 import dashboardApiServices from '../../services/DashboardServices'
-import {MessageContext} from '../../services/MessageContext'
+import store from '../../store/store'
 
 const FormForMessage: React.FC = () => {
     const [message, setMessage] = useState('')
-    const {messages, updateMessages} = useContext(MessageContext)
+
     const messageHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         setMessage(event.target.value)
     }
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
         event.preventDefault()
+        console.log(store.getState().allThreadMessages)
         if (message.trim() !== '') {
             dashboardApiServices
                 .sendMessage(message)
                 .then(response => response.json())
                 .then(response => {
-                    updateMessages([...JSON.parse(localStorage.getItem('allThreadMessages') as any), {...response}])
+                    store.dispatch({type: 'UPDATE_MESSAGES', response})
                 })
                 .catch(error => console.error(error))
             setMessage('')
