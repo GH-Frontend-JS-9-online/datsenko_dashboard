@@ -1,39 +1,42 @@
 import React from 'react'
 import './About.scss'
 import {IAbout} from '../../interfaces/IAbout'
+import {useSelector} from 'react-redux'
 
 const About: React.FC<IAbout> = props => {
+    const user = useSelector((state: any) => state.user)
     return (
         <div className="about">
             <div className="user-photo">
                 <i className="fas fa-circle"></i>
             </div>
-            {props.aboutItems.map(({name, email, position, description, phone, address, organization}) => {
+            {user.map((item: any, index: number) => {
                 return (
-                    <>
+                    <div key={index}>
                         <div className="user-data">
-                            <h2>{name}</h2>
-                            <h3>{position}</h3>
-                            <p>{description}</p>
+                            <h2>{item.name}</h2>
+                            <h3>{item.position}</h3>
+                            <p>{item.description}</p>
                         </div>
                         <ul className="user-contacts">
                             <li className="user-contacts__item">
                                 <h4>Email</h4>
-                                <span>{email}</span>
+                                <span>{item.email}</span>
                             </li>
                             <li className="user-contacts__item">
                                 <h4>Phone</h4>
-                                <span>{phone}</span>
+                                <span>{item.phone}</span>
                             </li>
                             <li className="user-contacts__item">
                                 <h4>Address</h4>
-                                <span>{address}</span>
+                                <span>{item.address}</span>
                             </li>
                             <li className="user-contacts__item">
                                 <h4>Organization</h4>
-                                <span>{organization}</span>
+                                <span>{item.organization}</span>
                             </li>
-                        </ul></>
+                        </ul>
+                    </div>
                 )
             })}
         </div>
