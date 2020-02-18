@@ -1,15 +1,15 @@
 import React, {useContext} from 'react'
 import './Inbox.scss'
-import {MessageContext} from '../../services/MessageContext'
 import convertDate from '../../services/convertDate'
+import {useSelector} from 'react-redux'
 
 const Inbox: React.FC = () => {
-    const {messages, updateMessages} = useContext(MessageContext)
+    const allThreadMessages = useSelector((state: any) => state.allThreadMessages)
     return (
         <div className="inbox">
-            {[...messages].map(item => {
+            {allThreadMessages.map((item: any, index: number) => {
                 return (
-                    <div className="messages">
+                    <div key={index} className="messages">
                         <div className="person">
                             <div>
                                 <i className="fas fa-circle"></i>
