@@ -5,7 +5,6 @@ import Middle from '../middle/Middle'
 import {IProjectsItem} from '../../interfaces/IProjectsItem'
 import {asideMenuIcons} from '../../services/ProjectContext'
 
-
 const Main:React.FC<IProjectsItem> = props => {
     return (
         <main className="main">
