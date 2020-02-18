@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
-import {ProjectContext} from "../services/ProjectContext";
-import AppHeader from "../components/app-header/AppHeader";
-import Main from "../components/main/Main";
-import dashboardApiServices from "../services/DashboardServices";
+import {ProjectContext} from '../services/ProjectContext'
+import AppHeader from '../components/app-header/AppHeader'
+import Main from '../components/main/Main'
+import dashboardApiServices from '../services/DashboardServices'
 
 const ProjectsPage:React.FC = () => {
     dashboardApiServices
