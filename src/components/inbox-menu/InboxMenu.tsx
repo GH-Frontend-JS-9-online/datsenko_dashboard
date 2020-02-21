@@ -1,9 +1,8 @@
 import React from 'react'
 import './InboxMenu.scss'
-import {IMessagesItem} from '../../interfaces/IMessagesItem'
 import {useSelector} from 'react-redux'
 
-const InboxMenu:React.FC<IMessagesItem> = props => {
+const InboxMenu:React.FC = () => {
     const allThreadMessages = useSelector((state: any) => state.allThreadMessages)
     return (
         <nav className="inbox-nav">
