@@ -1,5 +1,5 @@
 import {createStore} from 'redux'
-import rootReducer from '../reducers/reducers'
+import {rootReducer} from '../reducers/reducers'
 
 let initialState: any = {
     user: [{...JSON.parse(<any>localStorage.getItem('user'))} || {}],
