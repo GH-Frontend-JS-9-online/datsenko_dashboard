@@ -3,6 +3,7 @@ import './AddProject.scss'
 import dashboardApiServices from '../../services/DashboardServices'
 import {useSelector, useDispatch} from 'react-redux'
 import {IProject} from '../../interfaces/IProject'
+import {updateProjects} from '../../reducers/reducers'
 
 interface IAddProject {
     addProjectDisplay: string
@@ -44,7 +45,7 @@ const AddProject:React.FC<IAddProject> = props => {
             .createProject(newProject)
             .then(response => response.json())
             .then(response => {
-                dispatch({type: 'UPDATE_PROJECTS', payload: response})
+                dispatch(updateProjects(response))
                 dashboardApiServices
                     .getAllProjects()
                     .then(response => response.json())
