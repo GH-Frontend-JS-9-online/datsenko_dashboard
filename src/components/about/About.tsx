@@ -1,9 +1,8 @@
 import React from 'react'
 import './About.scss'
-import {IAbout} from '../../interfaces/IAbout'
 import {useSelector} from 'react-redux'
 
-const About: React.FC<IAbout> = props => {
+const About: React.FC = () => {
     const user = useSelector((state: any) => state.user)
     return (
         <div className="about">
