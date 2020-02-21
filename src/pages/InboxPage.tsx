@@ -1,12 +1,11 @@
 import React from 'react'
 import AppHeader from '../components/app-header/AppHeader'
-import {asideMenuIcons} from '../services/ProjectContext'
 import Aside from '../components/aside/Aside'
 import InboxMenu from '../components/inbox-menu/InboxMenu'
 import Inbox from '../components/inbox/Inbox'
 import Coversation from '../components/coversation/Coversation'
 import About from '../components/about/About'
-import dashboardApiServices from "../services/DashboardServices";
+import dashboardApiServices from '../services/DashboardServices'
 
 const InboxPage: React.FC = () => {
     dashboardApiServices
@@ -18,7 +17,7 @@ const InboxPage: React.FC = () => {
         <div>
             <AppHeader/>
             <main className="main">
-                <Aside asideMenuIcons={asideMenuIcons}/>
+                <Aside/>
                 <div className="middle">
                     <InboxMenu/>
                     <div className="message">
