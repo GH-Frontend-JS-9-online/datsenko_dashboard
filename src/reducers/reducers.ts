@@ -1,14 +1,30 @@
-const rootReducer = (state: any, action: any) => {
+enum ActionsDashboard {
+    User = 'UPDATE_USER',
+    Projects = 'UPDATE_PROJECTS',
+    Messages = 'UPDATE_MESSAGES'
+}
+
+export const rootReducer = (state: any, action: any) => {
     switch (action.type) {
-        case 'UPDATE_USER':
+        case ActionsDashboard.User:
             return {}
-        case 'UPDATE_PROJECTS':
+        case ActionsDashboard.Projects:
             return {...state,  projects: [...state.projects, action.payload]}
-        case 'UPDATE_MESSAGES':
+        case ActionsDashboard.Messages:
             return {...state, allThreadMessages: [...state.allThreadMessages, action.payload]}
         default:
             return state
     }
 }
 
-export default rootReducer
+export const updateProjects = (project: any) => ({
+    type: ActionsDashboard.Projects,
+    payload: project
+})
+
+export const updateMessages = (message: any) => ({
+    type: ActionsDashboard.Projects,
+    payload: message
+})
+
+
