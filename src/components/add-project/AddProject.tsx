@@ -1,8 +1,8 @@
-import React, {useContext, useState} from 'react'
+import React, {useState} from 'react'
 import './AddProject.scss'
 import dashboardApiServices from '../../services/DashboardServices'
+import {useSelector, useDispatch} from 'react-redux'
 import {IProject} from '../../interfaces/IProject'
-import {ProjectContext} from '../../services/ProjectContext'
 
 interface IAddProject {
     addProjectDisplay: string
@@ -10,8 +10,8 @@ interface IAddProject {
 }
 
 const AddProject:React.FC<IAddProject> = props => {
-
-    const updateProjects = useContext(ProjectContext)
+    const projects = useSelector((state: any) => state.projects)
+    const dispatch = useDispatch()
 
     const [title, setTitle] = useState<string>('')
     const [company, setCompany] = useState<string>('')
@@ -30,13 +30,6 @@ const AddProject:React.FC<IAddProject> = props => {
     const deadlineHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         setDeadline(event.target.value)
     }
-
-    dashboardApiServices
-        .getCurrentUser()
-        .then(response => response.json())
-        .then(response => localStorage.setItem('user',  JSON.stringify(response)))
-        .catch(err => console.error(err))
-
     const newProject: IProject = {
         title: title,
         company: company,
@@ -47,20 +40,24 @@ const AddProject:React.FC<IAddProject> = props => {
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
         event.preventDefault()
-              dashboardApiServices
+        dashboardApiServices
             .createProject(newProject)
             .then(response => response.json())
             .then(response => {
-                localStorage.setItem('projects', JSON.stringify(response))
-                console.table(response)
+                dispatch({type: 'UPDATE_PROJECTS', payload: response})
+                dashboardApiServices
+                    .getAllProjects()
+                    .then(response => response.json())
+                    .then(response => {
+                        localStorage.setItem('projects', JSON.stringify([...localStorage.getItem('projects') as any, response]))
+                    })
+                    .catch(err => console.error(err))
             })
             .catch(err => console.error(err))
-        console.log(newProject)
         setTitle('')
         setCompany('')
         setCost('')
         setDeadline('')
-        updateProjects()
     }
 
     return (
