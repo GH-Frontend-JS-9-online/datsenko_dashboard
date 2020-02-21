@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import './FormForMessage.scss'
 import dashboardApiServices from '../../services/DashboardServices'
 import {useDispatch} from 'react-redux'
+import {updateMessages} from '../../reducers/reducers'
 
 const FormForMessage: React.FC = () => {
     const [message, setMessage] = useState('')
@@ -18,7 +19,7 @@ const FormForMessage: React.FC = () => {
                 .then(response => response.json())
                 .then(response => {
                     localStorage.setItem('allThreadMessages', JSON.stringify([...localStorage.getItem('allThreadMessages') as any, response]))
-                    dispatch({type: 'UPDATE_MESSAGES', payload: response})
+                    dispatch(updateMessages(response))
                 })
                 .catch(error => console.error(error))
             dashboardApiServices
