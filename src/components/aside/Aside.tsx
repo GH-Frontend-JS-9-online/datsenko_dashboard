@@ -2,17 +2,14 @@ import React from 'react'
 import './Aside.scss'
 import {NavLink} from 'react-router-dom'
 
-interface IAside {
-    asideMenuIcons: Array<string>
-}
-
-const Aside: React.FC<IAside> = props => {
+const Aside: React.FC = () => {
+    const asideMenuIcons: Array<string> = ['home', 'bars', 'chart-line', 'envelope', 'user-friends']
     const links: Array<string> = ['/', '/projects', '/raport', '/inbox', '/authorization']
     return (
         <aside className="aside">
             <nav className="aside__nav">
                 <ul className="aside__nav__menu">
-                    {props.asideMenuIcons.map((item, index) => {
+                    {asideMenuIcons.map((item, index) => {
                         return (
                             <li key={index} className="aside__nav__menu__item">
                                 <NavLink to={links[index]} className="aside__nav__menu__link" >
