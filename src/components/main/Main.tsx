@@ -2,14 +2,12 @@ import React from 'react'
 import './Main.scss'
 import Aside from '../aside/Aside'
 import Middle from '../middle/Middle'
-import {IProjectsItem} from '../../interfaces/IProjectsItem'
-import {asideMenuIcons} from '../../services/ProjectContext'
 
-const Main:React.FC<IProjectsItem> = props => {
+const Main:React.FC = () => {
     return (
         <main className="main">
-            <Aside asideMenuIcons={asideMenuIcons}/>
-            <Middle projectsItems={props.projectsItems}/>
+            <Aside/>
+            <Middle/>
         </main>
     )
 }
