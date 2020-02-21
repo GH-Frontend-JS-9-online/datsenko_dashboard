@@ -1,5 +1,6 @@
 import {createStore} from 'redux'
 import {rootReducer} from '../reducers/reducers'
+import { composeWithDevTools } from 'redux-devtools-extension'
 
 let initialState: any = {
     user: [{...JSON.parse(<any>localStorage.getItem('user'))} || {}],
@@ -7,6 +8,10 @@ let initialState: any = {
     allThreadMessages: [...JSON.parse(<any>localStorage.getItem('allThreadMessages')) || []]
 }
 
-const store = createStore(rootReducer, initialState)
+const store = createStore(
+    rootReducer,
+    initialState,
+    composeWithDevTools()
+)
 
 export default store
