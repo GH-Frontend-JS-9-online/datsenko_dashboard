@@ -1,7 +1,7 @@
 const rootReducer = (state: any, action: any) => {
     switch (action.type) {
         case 'UPDATE_USER':
-            return {...state, ...action.payload}
+            return {}
         case 'UPDATE_PROJECTS':
             return {...state,  projects: [...state.projects, action.payload]}
         case 'UPDATE_MESSAGES':
