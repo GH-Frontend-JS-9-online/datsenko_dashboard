@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import './Inbox.scss'
 import convertDate from '../../services/convertDate'
 import {useSelector} from 'react-redux'
