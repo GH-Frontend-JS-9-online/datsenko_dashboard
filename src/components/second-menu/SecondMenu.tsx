@@ -1,15 +1,16 @@
 import React from 'react'
 import './SecondMenu.scss'
-import {IProjectsItem} from '../../interfaces/IProjectsItem'
+import {useSelector} from 'react-redux'
 
-const SecondMenu:React.FC<IProjectsItem> = props => {
+const SecondMenu:React.FC = () => {
+    const projects = useSelector((state: any) => state.projects)
     return (
         <nav className="second-nav">
             <ul className="second-nav__menu">
                 <ul className="second-nav__left-menu">
                     <li className="second-nav__left-menu__item">
                         <a href="#" className="second-nav__left-menu__link">
-                            {`All Projects (${props.projectsItems.length})`}
+                            {`All Projects (${projects.length})`}
                         </a>
                     </li>
                     <li className="second-nav__left-menu__item">
