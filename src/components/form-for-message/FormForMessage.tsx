@@ -21,6 +21,11 @@ const FormForMessage: React.FC = () => {
                     dispatch({type: 'UPDATE_MESSAGES', payload: response})
                 })
                 .catch(error => console.error(error))
+            dashboardApiServices
+                .getAllProjects()
+                .then(response => response.json())
+                .then(response => localStorage.setItem('projects', JSON.stringify(response)))
+                .catch(err => console.error(err))
             setMessage('')
         }
     }
