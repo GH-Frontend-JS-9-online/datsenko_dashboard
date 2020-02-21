@@ -1,44 +1,45 @@
 import React from 'react'
 import './ProjectsItem.scss'
 import convertDate from '../../services/convertDate'
-import {IProjectsItem} from '../../interfaces/IProjectsItem'
+import {useSelector} from 'react-redux'
 
-const ProjectsItem: React.FC<IProjectsItem> = props => {
+const ProjectsItem: React.FC = () => {
+    const projects = useSelector((state: any) => state.projects)
     return (
         <>
-            {props.projectsItems.map(({title, timeSpent, company, cost, deadline, progress, status, assigned, _id}) => {
+            {projects.map((item: any) => {
                 return (
-                    <ul key={_id as any} className="projects" style={
-                        {borderColor: (progress === 0) ? '#e2e3e8' : (progress === 100) ? '#4caf50' : '#2196f3'}
+                    <ul key={item._id as any} className="projects" style={
+                        {borderColor: (item.progress === 0) ? '#e2e3e8' : (item.progress === 100) ? '#4caf50' : '#2196f3'}
                     }>
                         <li className="projects__item">
                             <div className="title">
-                                <h4>{title}</h4>
-                                <p>{company}</p>
+                                <h4>{item.title}</h4>
+                                <p>{item.company}</p>
                             </div>
                         </li>
                         <li className="projects__item">
                             <div className="value">
-                                <h4>{cost}</h4>
+                                <h4>{item.cost}</h4>
                             </div>
                         </li>
                         <li className="projects__item">
                             <div className="deadline">
-                                <h4>{`${convertDate(deadline)}`}</h4>
+                                <h4>{`${convertDate(item.deadline)}`}</h4>
                             </div>
                         </li>
                         <li className="projects__item">
                             <div className="time-spent">
-                                <h4>{`${timeSpent} hours`}</h4>
+                                <h4>{`${item.timeSpent} hours`}</h4>
                             </div>
                         </li>
                         <li className="projects__item">
                             <div className="progress">
-                                <h4>{`${progress}%`}</h4>
+                                <h4>{`${item.progress}%`}</h4>
                                 <div>
                                     <span style={{
-                                        width: `${progress}%`,
-                                        background: (progress === 0) ? '#9ea3b4' : (progress === 100) ? '#4caf50' : '#2196f3'
+                                        width: `${item.progress}%`,
+                                        background: (item.progress === 0) ? '#9ea3b4' : (item.progress === 100) ? '#4caf50' : '#2196f3'
                                     }}>
                                     </span>
                                 </div>
@@ -46,15 +47,15 @@ const ProjectsItem: React.FC<IProjectsItem> = props => {
                         </li>
                         <li className="projects__item">
                             <div className="status">
-                                <h4>{status}</h4>
+                                <h4>{item.status}</h4>
                             </div>
                         </li>
                         <li className="projects__item">
                             <div className="assigned">
                                 <i className="fas fa-circle"></i>
                                 <div>
-                                    <h4>{(assigned !== null) ? assigned.name : 'not found'}</h4>
-                                    <p>{(assigned !== null) ? assigned.position : 'not found'}</p>
+                                    <h4>{(item.assigned !== null) ? item.assigned.name : 'not found'}</h4>
+                                    <p>{(item.assigned !== null) ? item.assigned.position : 'not found'}</p>
                                 </div>
                             </div>
                         </li>
