@@ -7,8 +7,8 @@ class DashboardApiServices {
         this.apiBase = `https://geekhub-frontend-js-9.herokuapp.com/api`
     }
 
-    signUp(user: IUser):Promise<any> {
-        return fetch(`${this.apiBase}/users`, {
+    async signUp(user: IUser):Promise<any> {
+        return await fetch(`${this.apiBase}/users`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -17,8 +17,8 @@ class DashboardApiServices {
         })
     }
 
-    login(user: IUser):Promise<any> {
-        return fetch(`${this.apiBase}/users/login`, {
+    async login(user: IUser):Promise<any> {
+        return await fetch(`${this.apiBase}/users/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -27,9 +27,9 @@ class DashboardApiServices {
         })
     }
 
-    resetPassword(user: IUser):Promise<any> {
+    async resetPassword(user: IUser):Promise<any> {
         let token: string = localStorage.getItem('token') as any
-        return fetch(`${this.apiBase}/users/reset_password`, {
+        return await fetch(`${this.apiBase}/users/reset_password`, {
             method: 'POST',
             headers: {
                 'x-access-token': token,
@@ -39,9 +39,9 @@ class DashboardApiServices {
         })
     }
 
-    getCurrentUser():Promise<any> {
+    async getCurrentUser():Promise<any> {
         let token: string = localStorage.getItem('token') as any
-        return fetch(`${this.apiBase}/users/`, {
+        return await fetch(`${this.apiBase}/users/`, {
             method: 'GET',
             headers: {
                 'x-access-token': token
@@ -49,10 +49,10 @@ class DashboardApiServices {
         })
     }
 
-    allThreadMessages():Promise<any> {
+    async allThreadMessages():Promise<any> {
         let token: string = localStorage.getItem('token') as any
         let id: string = JSON.parse(localStorage.getItem('user') as string)._id
-        return fetch(`${this.apiBase}/threads/messages/${id}`, {
+        return await fetch(`${this.apiBase}/threads/messages/${id}`, {
             method: 'GET',
             headers: {
                 'x-access-token': token
@@ -60,10 +60,10 @@ class DashboardApiServices {
         })
     }
 
-    sendMessage(message: string):Promise<any> {
+    async sendMessage(message: string):Promise<any> {
         let token: string = localStorage.getItem('token') as any
         let id: string = JSON.parse(localStorage.getItem('user') as string)._id
-        return fetch(`${this.apiBase}/threads/messages`, {
+        return await fetch(`${this.apiBase}/threads/messages`, {
             method: 'POST',
             headers: {
                 'x-access-token': token,
@@ -80,9 +80,9 @@ class DashboardApiServices {
         })
     }
 
-    getAllProjects():Promise<any> {
+    async getAllProjects():Promise<any> {
         let token: string = localStorage.getItem('token') as any
-        return fetch(`${this.apiBase}/projects/`, {
+        return await fetch(`${this.apiBase}/projects/`, {
             method: 'GET',
             headers: {
                 'x-access-token': token
@@ -90,9 +90,9 @@ class DashboardApiServices {
         })
     }
 
-    createProject(project: IProject):Promise<any> {
+    async createProject(project: IProject):Promise<any> {
         let token: string = localStorage.getItem('token') as any
-        return fetch(`${this.apiBase}/projects/`, {
+        return await fetch(`${this.apiBase}/projects/`, {
             method: 'POST',
             headers: {
                 'x-access-token': token,
