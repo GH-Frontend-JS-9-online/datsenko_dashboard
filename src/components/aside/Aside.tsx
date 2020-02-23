@@ -12,7 +12,7 @@ const Aside: React.FC = () => {
                     {asideMenuIcons.map((item, index) => {
                         return (
                             <li key={index} className="aside__nav__menu__item">
-                                <NavLink to={links[index]} className="aside__nav__menu__link" >
+                                <NavLink exact to={links[index]} activeStyle={{color: '#fff'}} className="aside__nav__menu__link" >
                                     <i className={`fas fa-${item}`}></i>
                                 </NavLink>
                             </li>
