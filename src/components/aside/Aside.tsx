@@ -1,10 +1,10 @@
 import React from 'react'
 import './Aside.scss'
-import {NavLink} from 'react-router-dom'
+import { A } from 'hookrouter'
 
 const Aside: React.FC = () => {
     const asideMenuIcons: Array<string> = ['home', 'bars', 'chart-line', 'envelope', 'user-friends']
-    const links: Array<string> = ['/', '/projects', '/raport', '/inbox', '/authorization']
+    const links: Array<string> = ['/', '/projects', '/raport', '/inbox', '/login']
     return (
         <aside className="aside">
             <nav className="aside__nav">
@@ -12,9 +12,9 @@ const Aside: React.FC = () => {
                     {asideMenuIcons.map((item, index) => {
                         return (
                             <li key={index} className="aside__nav__menu__item">
-                                <NavLink exact to={links[index]} activeStyle={{color: '#fff'}} className="aside__nav__menu__link" >
+                                <A href={links[index]} className="aside__nav__menu__link" >
                                     <i className={`fas fa-${item}`}></i>
-                                </NavLink>
+                                </A>
                             </li>
                         )
                     })}
