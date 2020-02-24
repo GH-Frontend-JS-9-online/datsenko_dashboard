@@ -2,8 +2,7 @@ import React, {useState} from 'react'
 import './Authorization.scss'
 import {IUser} from '../../interfaces/IUser'
 import dashboardApiServices from '../../services/DashboardServices'
-import {NavLink} from 'react-router-dom'
-
+import { A } from 'hookrouter'
 
 const SignUp:React.FC = () => {
     const [email, setEmail] = useState<string>('')
@@ -49,7 +48,7 @@ const SignUp:React.FC = () => {
             <div className="form-container sign-in-container">
                 <form name="registerForm" onSubmit={handlerSubmit} className="form">
                     <h1>Sign up</h1>
-                    <NavLink to="/login">Existing member?</NavLink>
+                    <A href="/login">Existing member?</A>
                     <input
                         onChange={emailHandler}
                         value={email}
