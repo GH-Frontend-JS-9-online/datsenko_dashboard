@@ -3,6 +3,7 @@ import {rootReducer} from '../reducers/reducers'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
 let initialState: any = {
+    isLogin: false,
     user: [{...JSON.parse(<any>localStorage.getItem('user'))} || {}],
     projects: [...JSON.parse(<any>localStorage.getItem('projects')) || []],
     allThreadMessages: [...JSON.parse(<any>localStorage.getItem('allThreadMessages')) || []]
