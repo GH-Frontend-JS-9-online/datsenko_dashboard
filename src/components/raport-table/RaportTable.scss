@@ -1,0 +1,42 @@
+.raport-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-family: Montserrat;
+}
+
+th, td {
+  padding: 30px;
+}
+
+.raport-table tr th {
+  color: #9ca1b2;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  text-transform: uppercase;
+  letter-spacing: 0.32px;
+  background-color: #3a3e52;
+
+}
+
+.raport-table tr td{
+  background-color: #2b2d3c;
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.32px;
+  border-bottom: 1px solid rgba(156, 161, 178, 0.3);
+}
+
+i.active {
+  color: #4caf50;
+  margin-right: 15px;
+}
+
+i.disable {
+  color: #f44336;
+  margin-right: 15px;
+}
