@@ -28,6 +28,11 @@ const RaportMenu:React.FC = () => {
                         <p>IMPRESSIONS</p>
                     </div>
                 </li>
+                <li className="raport-nav__right-menu__item">
+                    <a href="#" className="second-nav__right-menu__link">
+                        Week
+                    </a>
+                </li>
             </ul>
         </nav>
     )

@@ -5,7 +5,6 @@
 }
 
 .raport-nav__menu {
-  //background-color: #2b2d3c;
   list-style: none;
   display: flex;
   margin-top: 43px;
@@ -17,6 +16,45 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.raport-nav__right-menu__item {
+  margin-left: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.raport-nav__right-menu__item a {
+  margin-right: 108px;
+  width: 157px;
+  height: 36px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.raport-nav__right-menu__item a {
+  color: #9ea3b4;
+}
+
+.raport-nav__right-menu__item::before  {
+  content: 'Show:';
+  color: #9ea3b4;
+  line-height: 100%;
+  position: absolute;
+  left: -70px;
+  align-items: center;
+}
+
+.raport-nav__right-menu__item a::after {
+  content: "\2039";
+  color: #9ea3b4;
+  transform: rotate(-90deg);
+  margin-left: 5px;
+  font-size: 30px;
 }
 
 .raport-nav__menu__item:not(:last-of-type) {
