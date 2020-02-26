@@ -11,6 +11,7 @@ interface ICircleProgress {
 const CircleProgress:React.FC<ICircleProgress> = props => {
 
     const circleProgressStyle: ICircleProgress = {
+        pathTransitionDuration: 1.8,
         textSize: '22px',
         pathColor: `#2196f3`,
         textColor: '#2196f3',
