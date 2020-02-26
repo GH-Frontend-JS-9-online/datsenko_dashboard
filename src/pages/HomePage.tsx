@@ -1,6 +1,7 @@
 import React from 'react'
 import AppHeader from '../components/app-header/AppHeader'
 import Aside from '../components/aside/Aside'
+import Workflow from '../components/workflow/Workflow'
 
 const HomePage:React.FC = () => {
     return (
@@ -8,7 +9,7 @@ const HomePage:React.FC = () => {
             <AppHeader/>
             <main className="main">
                 <Aside/>
-                <h1 style={{color: '#fff'}}>HomePage</h1>
+                <Workflow/>
             </main>
         </div>
     )
