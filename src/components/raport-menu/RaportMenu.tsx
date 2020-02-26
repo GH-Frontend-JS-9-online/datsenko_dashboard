@@ -3,32 +3,44 @@ import 'react-circular-progressbar/dist/styles.css'
 import './RaportMenu.scss'
 import CircleProgress from './CircleProgress'
 
+type RaportMenuData = {
+    [key: string]: any
+}
+
 const RaportMenu:React.FC = () => {
+
+    const data: Array<RaportMenuData> = [
+        {
+            title: 'VIEWS',
+            amount: 1300,
+            percent: 75
+        },
+        {
+            title: 'VISITORS',
+            amount: 800,
+            percent: 35
+        },
+        {
+            title: 'VIEWS',
+            amount: 3300,
+            percent: 62
+        }
+    ]
 
     return (
         <nav className="raport-nav">
             <ul className="raport-nav__menu">
-                <li className="raport-nav__menu__item">
-                    <CircleProgress percent={75}/>
-                    <div className="visitors">
-                        <h3>1 300</h3>
-                        <p>VIEWS</p>
-                    </div>
-                </li>
-                <li className="raport-nav__menu__item">
-                    <CircleProgress percent={35}/>
-                    <div className="visitors">
-                        <h3>800</h3>
-                        <p>VISITORS</p>
-                    </div>
-                </li>
-                <li className="raport-nav__menu__item">
-                    <CircleProgress percent={62}/>
-                    <div className="visitors">
-                        <h3>3 800</h3>
-                        <p>IMPRESSIONS</p>
-                    </div>
-                </li>
+                {data.map(({title, amount, percent}) => {
+                    return (
+                        <li className="raport-nav__menu__item">
+                            <CircleProgress percent={percent}/>
+                            <div className="visitors">
+                                <h3>{amount}</h3>
+                                <p>{title}</p>
+                            </div>
+                        </li>
+                    )
+                })}
                 <li className="raport-nav__right-menu__item">
                     <a href="#" className="second-nav__right-menu__link">
                         Week
