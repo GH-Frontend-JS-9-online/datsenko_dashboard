@@ -8,4 +8,4 @@
 2. Advanced
    1. add react-router, redux
    2. add inbox 
-![chart](https://user-images.githubusercontent.com/51996182/75276204-62e23600-580e-11ea-9047-1ca7751a3898.png)
+![dnd](https://user-images.githubusercontent.com/51996182/75355438-29b1d080-58b7-11ea-94f9-387cbb04adb7.gif)
