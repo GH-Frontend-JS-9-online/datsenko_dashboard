@@ -2,6 +2,7 @@ import React from 'react'
 import 'react-circular-progressbar/dist/styles.css'
 import './RaportMenu.scss'
 import CircleProgress from './CircleProgress'
+import ButtonOptions from "../button-options/ButtonOptions";
 
 type RaportMenuData = {
     [key: string]: any
@@ -41,12 +42,8 @@ const RaportMenu:React.FC = () => {
                         </li>
                     )
                 })}
-                <li className="raport-nav__right-menu__item">
-                    <a href="#" className="second-nav__right-menu__link">
-                        Week
-                    </a>
-                </li>
             </ul>
+            <ButtonOptions beforeButtonText="Show" buttonName="Week"/>
         </nav>
     )
 }
