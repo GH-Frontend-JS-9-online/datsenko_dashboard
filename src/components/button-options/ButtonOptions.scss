@@ -1,0 +1,72 @@
+.btn-options-wrapper,
+.btn-options {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.32px;
+}
+
+.btn-options:active {
+  transform: scale(0.95);
+}
+
+.menu-options {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  list-style: none;
+  z-index: 999;
+  box-shadow: 0 3px 80px rgba(23, 24, 32, 0.2);
+  background-color: transparent;
+  position: absolute;
+  display: none;
+  top: 37px;
+}
+
+.menu-options__item {
+  text-align: left;
+  padding: 10px;
+}
+
+.menu-options__item:hover {
+  background-color: rgba(23, 24, 32, 0.2);
+}
+
+.btn-options {
+  position: relative;
+  width: 157px;
+  height: 36px;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: transparent;
+  margin-left: 24px;
+}
+
+#btn-options {
+  display: none;
+}
+
+#btn-options:checked ~ .menu-options {
+  display: block;
+}
+
+i {
+  transition: transform .3s ease;
+}
+
+#btn-options:checked + i {
+  transform: rotate(180deg);
+}
+
+.menu-options__link {
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.36px;
+}
