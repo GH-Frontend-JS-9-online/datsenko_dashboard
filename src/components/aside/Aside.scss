@@ -26,3 +26,20 @@
 .aside__nav__menu__item > .aside__nav__menu__link:hover {
   color: #ffffff;
 }
+
+.aside__nav__menu__item:nth-child(4) .aside__nav__menu__link {
+  position: relative;
+}
+
+.aside__nav__menu__item:nth-child(4) .aside__nav__menu__link::after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border: 3px solid #2f3242;
+  background-color: #2196f3;
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: -6px;
+}
