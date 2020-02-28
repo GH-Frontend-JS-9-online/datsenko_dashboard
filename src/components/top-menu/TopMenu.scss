@@ -48,6 +48,20 @@
 .top-nav__menu__item:nth-of-type(3) > .top-nav__menu__link {
   line-height: 31px;
   font-size: 31px;
+  position: relative;
+}
+
+.top-nav__menu__item:nth-of-type(3) > .top-nav__menu__link::after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border: 3px solid #2f3242;
+  background-color: #2196f3;
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: -3px;
 }
 
 .top-nav__menu__item:nth-of-type(4) > .top-nav__menu__link {
