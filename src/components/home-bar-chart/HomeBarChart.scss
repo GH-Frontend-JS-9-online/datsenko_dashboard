@@ -1,0 +1,32 @@
+.chart-two {
+  width: 50%;
+  box-shadow: 0 3px 40px rgba(23, 24, 32, 0.2);
+  background-color: #2f3242;
+  position: relative;
+  padding: 37px 34px;
+}
+
+.bar-chart {
+  position: absolute;
+  bottom: 22px;
+  right: 104px;
+}
+
+.line {
+  width: 724px;
+  height: 1px;
+  background-color: #9ea3b4;
+  margin: 0 auto 42px;
+}
+
+.title {
+  width: 724px;
+  margin: 0 auto 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.36px;
+}
