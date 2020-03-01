@@ -56,7 +56,7 @@ const HomeBarChart: React.FC = () => {
     ];
     return (
         <div className="chart-two">
-            <div className="title">Sales report
+            <div className="title-chart-two">Sales report
                 <ButtonOptions beforeButtonText="Show" buttonName="Year"/>
             </div>
             <div className="line"></div>
