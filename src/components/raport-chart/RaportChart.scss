@@ -1,0 +1,21 @@
+.chart {
+  position: relative;
+}
+.sub-chart-menu {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  bottom: 24px;
+}
+
+.sub-chart-menu__item {
+  color: #9ca1b2;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.32px;
+}
