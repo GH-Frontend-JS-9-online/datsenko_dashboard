@@ -3,7 +3,8 @@ import './RaportChart.scss'
 import { ResponsiveContainer, AreaChart, Area } from 'recharts'
 
 const RaportChart: React.FC = () => {
-    const data = [
+    const days: Array<string> = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    const data: Array<any> = [
         {
             uv: 3000
         },
@@ -35,6 +36,13 @@ const RaportChart: React.FC = () => {
                     <Area type="monotone" dataKey="uv" stroke="#2196f3" fill="#293d58" />
                 </AreaChart>
             </ResponsiveContainer>
+            <ul className="sub-chart-menu">
+                {days.map((item, index) => {
+                    return (
+                        <li key={index} className="sub-chart-menu__item">{item}</li>
+                    )
+                })}
+            </ul>
         </div>
     )
 }
