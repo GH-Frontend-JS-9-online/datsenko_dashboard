@@ -1,5 +1,4 @@
 .chart-two {
-  width: 50%;
   box-shadow: 0 3px 40px rgba(23, 24, 32, 0.2);
   background-color: #2f3242;
   position: relative;
@@ -7,16 +6,9 @@
 }
 
 .bar-chart {
-  position: absolute;
-  bottom: 22px;
-  right: 104px;
-}
-
-.line {
-  width: 724px;
-  height: 1px;
-  background-color: #9ea3b4;
-  margin: 0 auto 42px;
+  bottom: 21px;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .title-chart-two {
