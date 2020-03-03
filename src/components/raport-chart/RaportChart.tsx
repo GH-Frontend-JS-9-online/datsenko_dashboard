@@ -28,7 +28,7 @@ const RaportChart: React.FC = () => {
         }
     ]
     return (
-        <div className="chart" style={{ width: '100%', height: 300, background: '#2b2d3' }}>
+        <div className="chart" style={{ width: '100%', height: 300, background: '#2b2d3'}}>
             <ResponsiveContainer>
                 <AreaChart
                     data={data}
