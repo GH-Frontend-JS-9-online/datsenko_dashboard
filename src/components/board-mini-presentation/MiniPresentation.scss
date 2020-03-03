@@ -28,13 +28,6 @@
   margin-right: 20px;
   box-shadow: 0 3px 40px rgba(23, 24, 32, 0.2);
   background-color: #2f3242;
-
-  .chart-two {
-    width: 100%;
-    .recharts-wrapper {
-      left: 30px;
-    }
-  }
 }
 
 .mini-inbox {
@@ -91,7 +84,7 @@
   font-weight: 400;
 }
 
-.react-calendar__month-view__days .react-calendar__month-view__days__day--weekend,,
+.react-calendar__month-view__days .react-calendar__month-view__days__day--weekend,
 .react-calendar__month-view__days__day {
   color: #757575;
 }
