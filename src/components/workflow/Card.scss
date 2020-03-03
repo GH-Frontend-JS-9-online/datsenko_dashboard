@@ -1,0 +1,39 @@
+.card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card-photo i {
+  font-size: 42px;
+  color: #24203d;
+}
+
+.card-info h4 {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.32px;
+}
+
+.card-info > span {
+  color: #9ea3b4;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.28px;
+}
+
+.card-info > span i {
+  font-size: 5px;
+  margin: 0 9px;
+}
+
+.card-menu {
+  display: flex;
+  align-items: center;
+}
+
+.card-menu i{
+  font-size: 16px;
+  color: #9ea3b4;
+}
