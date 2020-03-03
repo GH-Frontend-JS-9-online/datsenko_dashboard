@@ -9,7 +9,7 @@
    1. add react-router, redux
    2. add inbox 
    
-![charttwoo](https://user-images.githubusercontent.com/51996182/75630301-348b9e80-5bf2-11ea-874a-154a4ece41ab.png)   
+![charttwoo](https://user-images.githubusercontent.com/51996182/75815234-b965ec00-5d9b-11ea-8072-80eff9f20281.png) 
    
 ![workflow](https://user-images.githubusercontent.com/51996182/75476111-b1283e00-59a2-11ea-8c0f-ad93ce509659.png)   
    
