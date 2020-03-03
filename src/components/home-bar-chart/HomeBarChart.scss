@@ -3,16 +3,23 @@
   background-color: #2f3242;
   position: relative;
   padding: 37px 34px;
+
 }
 
 .bar-chart {
-  bottom: 21px;
-  width: 90%;
+
+}
+
+.bar-chart .recharts-wrapper {
   margin: 0 auto;
 }
 
+.bar-chart .recharts-wrapper .recharts-surface {
+ width: 100%;
+}
+
 .title-chart-two {
-  width: 724px;
+  width: 100%;
   margin: 0 auto 32px;
   display: flex;
   justify-content: space-between;
@@ -21,4 +28,18 @@
   font-size: 24px;
   font-weight: 400;
   letter-spacing: 0.36px;
+}
+
+.line-wrapper {
+  position: absolute;
+  bottom: 22px;
+  width: 100%;
+  left: 0;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: #9ea3b4;
+  margin-bottom: 42px;
 }

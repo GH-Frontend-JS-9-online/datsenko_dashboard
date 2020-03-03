@@ -59,7 +59,15 @@ const HomeBarChart: React.FC = () => {
             <div className="title-chart-two">Sales report
                 <ButtonOptions beforeButtonText="Show" buttonName="Year"/>
             </div>
-
+            <div className="line-wrapper">
+                <div className="line"></div>
+                <div className="line"></div>
+                <div className="line"></div>
+                <div className="line"></div>
+                <div className="line"></div>
+                <div className="line"></div>
+                <div className="line"></div>
+            </div>
             <div className="bar-chart">
                 <BarChart width={700} height={300} data={data} margin={{}}>
                     <XAxis dataKey="name"/>
