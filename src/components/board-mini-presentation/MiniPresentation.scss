@@ -100,3 +100,89 @@
 .react-calendar__month-view__weekdays__weekday abbr {
   text-decoration: none;
 }
+
+.mini-inbox {
+  .mini-inbox-header {
+    box-shadow: 0 3px 80px rgba(23, 24, 32, 0.2);
+    background-color: #3a3e52;
+    text-align: center;
+    padding: 35px;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 0.36px;
+    span {
+      color: #2196f3;
+      letter-spacing: 0.36px;
+    }
+  }
+  .mini-inbox-messages-wrapper {
+    max-height: 402px;
+    overflow-y: scroll;
+    h2 {
+      color: #ffffff;
+    }
+  }
+}
+
+.mini-projects {
+  .mini-projects-header {
+    box-shadow: 0 3px 80px rgba(23, 24, 32, 0.2);
+    background-color: #3a3e52;
+    text-align: center;
+    padding: 35px;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 0.36px;
+  }
+  .mini-projects-wrapper {
+    max-height: 402px;
+    overflow-y: scroll;
+    .project-card {
+      padding: 25px;
+      display: flex;
+      justify-content:space-between;
+      align-items: center;
+      border-bottom: 1px solid #9ca1b2;
+      .project-card-photo {
+        i {
+          font-size: 42px;
+          color: #24203d;
+        }
+      }
+
+      .project-card-info h4 {
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 0.32px;
+      }
+
+      .project-card-info > span {
+        color: #9ea3b4;
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 0.28px;
+      }
+
+      .project-card-info > span i {
+        font-size: 5px;
+        margin: 0 9px;
+      }
+
+      .project-card-menu {
+        display: flex;
+        align-items: center;
+      }
+
+      .project-card-menu i{
+        font-size: 16px;
+        color: #9ea3b4;
+      }
+
+    }
+
+
+  }
+}

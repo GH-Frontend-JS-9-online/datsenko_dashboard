@@ -4,6 +4,8 @@ import RaportChart from '../raport-chart/RaportChart'
 import MiniRaport from './MiniRaport'
 import HomeBarChart from '../home-bar-chart/HomeBarChart'
 import Calendar from 'react-calendar'
+import MiniInbox from './MiniInbox'
+import MiniProjects from './MiniProjects'
 
 const MiniPresentation: React.FC = () => {
     return (
@@ -13,14 +15,16 @@ const MiniPresentation: React.FC = () => {
                 <RaportChart/>
             </div>
             <div className="mini-projects">
-
+                <MiniProjects/>
             </div>
 
             <div className="wrapper-sales-inbox">
                 <div className="sales-raport">
                     <HomeBarChart/>
                 </div>
-                <div className="mini-inbox"></div>
+                <div className="mini-inbox">
+                    <MiniInbox/>
+                </div>
             </div>
 
             <div className="calendar">
